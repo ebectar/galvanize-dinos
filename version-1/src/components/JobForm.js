@@ -1,20 +1,53 @@
 import React from 'react'
 class JobForm extends React.Component {
-  render() {
-  return (
-      <aside id="side-bar">
-        <h3>Add a Job</h3>
-        <form className="job-form">
-          <label htmlFor="title">Title</label>
-          <input type="text" name="title"/>
-          <label htmlFor="pay">Compensation</label>
-          <input type="text" name="pay"/>
-          <label htmlFor="description">Description</label>
-          <textarea name="description" rows="8" cols="40"></textarea>
-          <input type="submit" name="submit" value="Submit" />
-        </form>
-      </aside>
+    state = {
+      id: '',
+      title: '', 
+      pay: '', 
+      description: '', 
+      interested: ''
+    }
+
+    resetForm = () => {
+      this.setState(
+        {
+          id: '',
+          title: '', 
+          pay: '', 
+          description: '', 
+          interested: ''
+        }
+      )
+    }
+
+  handleInputChange = (event) => {
+    this.setState(
+      {[event.target.name]: event.target.value}
     )
   }
+
+  handleSubmit = (event) => {
+      event.preventDefault()
+      this.props.jobListingSubmitted(this.state)
+      this.resetForm()
+  }
+
+  render(){
+    return (
+        <aside id="side-bar">
+          <h3>Add a Job</h3>
+          <form className="job-form" onSubmit={this.handleSubmit}>
+            <label htmlFor="title">Title</label>
+            <input type="text" name="title" value={this.state.title} onChange={this.handleInputChange}/>
+            <label htmlFor="pay">Compensation</label>
+            <input type="text" name="pay" value={this.state.pay} onChange={this.handleInputChange}/>
+            <label htmlFor="description">Description</label>
+            <textarea name= "description" rows="8" cols="40" value={this.state.description} onChange={this.handleInputChange}></textarea>
+            <input type="submit" name="submit" value="Submit" />
+          </form>
+        </aside>
+      )
+  }
 }
+
 export default JobForm
