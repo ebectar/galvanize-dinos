@@ -20,9 +20,9 @@ componentDidMount() {
     }
 
     jobListingSubmitted = (job) => {
-      this.setState({
-        listings: this.state.listings.concat(job)
-      })
+      const jobs = this.state;
+      jobs.unshift(job);
+      listings: this.setState(jobs)
     }
 
   render() {
@@ -30,8 +30,8 @@ componentDidMount() {
       <div className="App">
         <Header />
         <main>
-          <JobList listings={this.state.listings}/>
-          <JobForm jobListingSubmitted={this.jobListingSubmitted}/>
+          <JobList listings = {this.state.listings}/>
+          <JobForm jobListingSubmitted = {this.jobListingSubmitted}/>
         </main>
         <Footer />
       </div>
