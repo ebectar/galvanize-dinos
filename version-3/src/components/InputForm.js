@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 
 class InputForm extends Component {
-
-    handleSubmit(){
-        //target input id of submit
-        //fills p id message with 'Your application was submitted;
-    }
-
-    //fillForm(){
-        //take info from textarea populating preview }
-
+    updatePreview() {
+        const preview = document.querySelector('#application-preview');
+        const text = document.querySelector('#application-text').value;
+        preview.textContent = text;
+      }
+      handleSubmit(event) {
+        event.preventDefault();
+        event.target.reset();
+        document.querySelector("#application-preview").textContent = "";
+        document.getElementById("message").textContent = "Your application was submitted!"
+      }
     render() {
         return (
             <form id="application-input">
                 <label>Apply Here: </label>
-                <textarea id="application-text" rows="8" cols="100"></textarea>
-                <input id="submit" type="submit" value="Submit" onSubmit={this.handleSubmit}/>
+                <textarea id="application-text" rows="8" cols="100" onKeyUp={this.updatePreview}></textarea>
+                <input id="submit" type="submit" value="Submit"/>
             </form>
         )
     }

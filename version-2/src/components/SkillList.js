@@ -1,5 +1,4 @@
 import React from 'react'
-
 class SkillList extends React.Component {
     constructor(props) {
         super(props)

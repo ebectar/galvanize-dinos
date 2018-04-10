@@ -20,9 +20,9 @@ componentDidMount() {
     }
 
     jobListingSubmitted = (job) => {
-      const jobs = this.state;
-      jobs.unshift(job);
-      listings: this.setState(jobs)
+      this.setState({
+        listings: this.state.listings.concat(job)
+        })
     }
 
   render() {

@@ -1,23 +1,25 @@
  import React from 'react'
  
  class JobList extends React.Component { 
+  listItem(dinosaurs) {
+    return (
+      <li key={dinosaurs.id}>
+        <h4>{dinosaurs.title}</h4>
+        <small>{dinosaurs.pay}</small>
+        <p>{dinosaurs.description}</p>
+        <small>{dinosaurs.interested.length} dinos are interested in this job</small>
+      </li> 
+    )
+  }
+
     render() {
         return (
-        <section>
+          <section>
             <h2>Job Listings</h2>
             <ul id="job-listings">
-              {this.props.listings.map(listing => {
-                return (
-                  <li key={listing.title}>
-                    <h4>{listing.title}</h4>
-                    <small>{listing.pay}</small>
-                    <p>{listing.description}</p>
-                    <small>{listing.interested.length} dinosaur(s) are interested in this position</small>
-                  </li>
-                )
-              })}
+              {this.props.listings.map(this.listItem)}
             </ul>
-        </section>
+          </section>
         )
       }
 }
