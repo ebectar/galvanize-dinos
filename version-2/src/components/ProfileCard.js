@@ -2,7 +2,14 @@ import React from 'react'
 
 import SkillList from './SkillList'
 
-const Profiles = (props) => {
+class ProfileCard extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            di
+        }
+    }
+    
     const dinosaurs = props.dinosaurs.map(dinosaur => {
         return (
             <li key={dinosaur.name}>
@@ -16,14 +23,10 @@ const Profiles = (props) => {
             </li>
         )
     })
-    return (
-        <section id="profiles-container">
-            <h2>Profiles</h2>
-            <ul id="profiles">
-                {dinosaurs}
-            </ul>
-        </section>
-    )
+    
 }
 
-export default Profiles
+export default ProfileCard
+
+
+//do we need to rerender

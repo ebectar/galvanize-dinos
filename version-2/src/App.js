@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header'
 import Profiles from './components/Profiles'
-import SkillList from './components/SkillList'
+// import SkillList from './components/SkillList'
 import Footer from './components/Footer'
 import './App.css';
 
@@ -27,8 +27,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <Profiles dinosaurs={this.state.dinosaurs}/>
-          <SkillList />
+          <Profiles dinosaurs={this.state.dinosaurs} />
         </main>
         <Footer />
       </div>
