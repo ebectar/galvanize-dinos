@@ -15,13 +15,13 @@ componentDidMount() {
     fetch('./listings.json')
     .then(response => response.json())
     .then(response => {
-        this.setState({listings: response}) 
+        this.setState({listings: response})
       })
     }
 
     jobListingSubmitted = (job) => {
       this.setState({
-        listings: this.state.listings.concat(job)
+        listings: this.state.listings.concat(job).reverse()
         })
     }
 
