@@ -2,8 +2,7 @@ import React from 'react'
 
 class Preview extends React.Component {
   togglePreview(){
-      const preview = document.querySelector('#application-preview')
-      preview.classList.toggle('hidden')
+    document.querySelector('#application-preview').classList.toggle('hidden')
   }
 
   render() {

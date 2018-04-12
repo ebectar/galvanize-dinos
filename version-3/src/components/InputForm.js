@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class InputForm extends Component {
+class InputForm extends React.Component {
     updatePreview() {
         document.querySelector('#application-preview').textContent = document.querySelector('#application-text').value
       }
     
     handleSubmit(event) {
-        console.log('I was submitted!!', event)
         event.preventDefault()
         event.target.reset()
         document.querySelector('#application-preview').textContent = ''
