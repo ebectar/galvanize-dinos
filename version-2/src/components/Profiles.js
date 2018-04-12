@@ -3,9 +3,7 @@ import SkillList from './SkillList'
 class Profiles extends React.Component {
   clickHandler = (event) => {
     let eventNode = event.target.parentNode
-    if (eventNode.classList.contains('profile-header')) {
-      eventNode.parentNode.childNodes[1].classList.toggle('hidden')
-    }
+    {(eventNode.classList.contains('profile-header')) ? eventNode.parentNode.childNodes[1].classList.toggle('hidden') : '' }
   }
 
   createDinoCard = (dinosaur) => {
