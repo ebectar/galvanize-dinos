@@ -16,4 +16,4 @@ class SkillList extends React.Component {
   }
 }
 
-  export default SkillList
+export default SkillList
