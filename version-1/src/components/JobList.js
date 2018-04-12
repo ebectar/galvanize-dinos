@@ -12,16 +12,16 @@
     )
   }
 
-    render() {
-        return (
-          <section>
-            <h2>Job Listings</h2>
-            <ul id="job-listings">
-              {this.props.listings.map(this.listItem)}
-            </ul>
-          </section>
-        )
-      }
+  render() {
+    return (
+      <section>
+        <h2>Job Listings</h2>
+        <ul id='job-listings'>
+          {this.props.listings.map(this.listItem)}
+        </ul>
+      </section>
+    )
+  }
 }
 
  export default JobList

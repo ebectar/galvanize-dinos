@@ -10,24 +10,25 @@ class App extends Component {
     this.state = {
         listings: []
     }
-}
-componentDidMount() {
-    fetch('./listings.json')
-    .then(response => response.json())
-    .then(response => {
-        this.setState({listings: response})
-      })
-    }
+  }
 
-    jobListingSubmitted = (job) => {
-      this.setState({
-        listings: this.state.listings.concat(job).reverse()
-        })
-    }
+  componentDidMount() {
+      fetch('./listings.json')
+      .then(response => response.json())
+      .then(response => {
+          this.setState({listings: response})
+      })
+  }
+
+  jobListingSubmitted = (job) => {
+    this.setState({
+      listings: this.state.listings.concat(job).reverse()
+    })
+  }
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Header />
         <main>
           <JobList listings = {this.state.listings}/>
