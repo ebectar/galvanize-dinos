@@ -1,9 +1,9 @@
 
 import React from 'react'
 import './App.css'
-import Header from "./components/Header.js"
-import Profiles from "./components/Profiles"
-import Footer from "./components/Footer"
+import Header from './components/Header.js'
+import Profiles from './components/Profiles'
+import Footer from './components/Footer'
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -13,14 +13,14 @@ class App extends React.Component {
   }
   
   componentDidMount() {
-    fetch("./dinosaurs.json")
+    fetch('./dinosaurs.json')
       .then(response => response.json())
       .then(response => this.setState({dinosaurs: response}))
   }
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Header />
         <main>
           <Profiles dinosaurs={this.state.dinosaurs} />

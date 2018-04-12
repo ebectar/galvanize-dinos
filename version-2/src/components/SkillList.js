@@ -9,7 +9,7 @@ class SkillList extends React.Component {
   
   render() {
     return (
-        <ul className="skills-list">
+        <ul className='skills-list'>
           {this.props.dinosaurs.skills.map(this.createDinoCard)}
         </ul>
     )
