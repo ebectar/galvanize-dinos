@@ -1,0 +1,7 @@
+{
+    "baseUrl": "http://localhost:3000",
+    "integrationFolder": "tests",
+    "videosFolder": "tests/recordings",
+    "pluginsFile": false,
+    "supportFile": false
+}
