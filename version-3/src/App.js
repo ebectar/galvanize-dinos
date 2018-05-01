@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './components/Header'
 import InputForm from './components/InputForm'
 import JobDetails from './components/JobDetails'
-import Preview from './components/Preview'
 import Footer from './components/Footer'
 import './App.css';
 
@@ -27,7 +26,6 @@ class App extends Component {
           <main>
             <JobDetails listing={this.state.listing} />
             <InputForm />
-            <Preview />
           </main>
         <Footer />
       </div>
