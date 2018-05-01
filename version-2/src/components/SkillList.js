@@ -1,19 +1,18 @@
-
 import React from 'react'
+
 class SkillList extends React.Component {
-  createDinoCard(dinosaur) {
-    return (
-      <li key={dinosaur}>{dinosaur}</li>
-    )
-  }
-  
-  render() {
-    return (
-        <ul className='skills-list'>
-          {this.props.dinosaurs.skills.map(this.createDinoCard)}
-        </ul>
-    )
-  }
+    render() {
+        return (
+            <section className="skills-container ">
+                <h4>Skills</h4>
+                <ul className="skills-list">
+                    {this.props.skills.map(skill => {
+                        return <li key={skill}>{skill}</li>
+                    })}
+                </ul>
+            </section>
+        )
+    }
 }
 
 export default SkillList

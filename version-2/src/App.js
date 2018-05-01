@@ -1,9 +1,10 @@
 
 import React from 'react'
 import './App.css'
-import Header from './components/Header.js'
+import Header from './components/Header'
 import Profiles from './components/Profiles'
 import Footer from './components/Footer'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -23,7 +24,7 @@ class App extends React.Component {
       <div className='App'>
         <Header />
         <main>
-          <Profiles dinosaurs={this.state.dinosaurs} />
+        <Profiles dinosaurs={this.state.dinosaurs} />
         </main>
         <Footer />
       </div>
